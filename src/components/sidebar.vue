@@ -11,9 +11,10 @@
     </div>
     <div class="offcanvas-body">
         <div class="app-flex-column"> 
-            <button class="app-btn-red my-1">Emergency</button>
-            <button class="app-btn-blue my-1">Next Week</button>
-            <button class="app-btn-yellow my-1">Next Mount</button>
+            <button class="app-btn-light-dark my-1" @click="goToTasks">Tasks</button>
+            <button class="app-btn-red my-1" @click="goToEmergency">Emergency</button>
+            <button class="app-btn-blue my-1" @click="goToNextWeek">Next Week</button>
+            <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount</button>
         </div>
     </div>
     </div>
@@ -21,7 +22,20 @@
 
 <script>
 export default {
-
+    methods : {
+        goToTasks(){
+            return this.$router.push('/')
+        } ,
+        goToEmergency(){
+            return this.$router.push('/emergency')
+        } ,
+        goToNextWeek(){
+            return this.$router.push('/nextWeek')
+        } ,
+        goToNextMount(){
+            return this.$router.push('/nextMount')
+        } ,
+    }
 }
 </script>
 
