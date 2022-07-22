@@ -33,7 +33,7 @@
           <span class="app-text-size-y my-1">{{data.description}}</span>
           <hr>
           <div class="d-flex">
-            <button class="app-btn-red"><i class="bi bi-trash3"></i> Remove</button>
+            <button class="app-btn-red" @click="deleteTask(data.id)"><i class="bi bi-trash3"></i> Remove</button>
             <div class="dropdown">
               <button class="mx-2 app-btn-blue dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                <i class="bi bi-box-arrow-in-right"></i> Add To
@@ -53,12 +53,15 @@
 <script>
 import createTask from '../components/cerateTask.vue'
 export default {
+
    data(){
     return{
       search : '' ,
     }
    } ,
+
    components : {createTask} , 
+
    computed : {
      dataSource(){
       const tasks = this.$store.getters['tasksCS/getData']
@@ -66,7 +69,14 @@ export default {
         return task.title.match(this.search)
       })
      }
+   } , 
+
+   methods : {
+    deleteTask(id){
+      return this.$store.dispatch('tasksCS/delete' , id)
+    }
    }
+
 }
 </script>
 

@@ -19,6 +19,10 @@ const tasksCS = {
         newTask(state , newData){
             state.tasks.push(newData)
             updateLocalStorage(state.tasks)
+        } , 
+        deleteTask(state , id){
+            state.tasks = state.tasks.filter(task => task.id != id)
+            updateLocalStorage(state.tasks)
         }
     },
     actions: {
@@ -28,6 +32,18 @@ const tasksCS = {
                 position: 'top',
                 icon: 'success',
                 title: 'Task Created',
+                showConfirmButton: false,
+                timerProgressBar : true , 
+                toast : true , 
+                timer: 1000
+            })
+        } ,
+        delete({commit} , id){
+            commit('deleteTask' , id)
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: 'Task Deleted',
                 showConfirmButton: false,
                 timerProgressBar : true , 
                 toast : true , 

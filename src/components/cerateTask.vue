@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import {uid} from '../uid'
 export default {
     data(){
       return{
@@ -34,7 +35,7 @@ export default {
     } , 
     methods : {
       createTask(){
-         this.$store.dispatch('tasksCS/createTask' , {title : this.title , description : this.description })
+         this.$store.dispatch('tasksCS/createTask' , {id : uid() , title : this.title , description : this.description })
          this.title = '' 
          this.description = ''
       }
