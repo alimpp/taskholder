@@ -1,4 +1,4 @@
-const nextWeek = {
+const nextWeekCS = {
     namespaced : true , 
     state: {
     },
@@ -10,4 +10,4 @@ const nextWeek = {
     },
 }
 
-export default nextWeek
+export default nextWeekCS

@@ -1,4 +1,4 @@
-const emergency = {
+const emergencyCS = {
     namespaced : true , 
     state: {
     },
@@ -10,4 +10,4 @@ const emergency = {
     },
 }
 
-export default emergency
+export default emergencyCS

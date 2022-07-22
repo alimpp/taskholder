@@ -11,7 +11,7 @@
     </div>
     <div class="offcanvas-body">
         <div class="app-flex-column"> 
-            <button class="app-btn-light-dark my-1" @click="goToTasks">Tasks</button>
+            <button class="app-btn-light-dark my-1" @click="goToTasks">Tasks {{tasksCount}}</button>
             <button class="app-btn-red my-1" @click="goToEmergency">Emergency</button>
             <button class="app-btn-blue my-1" @click="goToNextWeek">Next Week</button>
             <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount</button>
@@ -35,6 +35,11 @@ export default {
         goToNextMount(){
             return this.$router.push('/nextMount')
         } ,
+    } , 
+    computed : {
+        tasksCount(){
+            return this.$store.getters['tasksCS/tasksCount']
+        }
     }
 }
 </script>

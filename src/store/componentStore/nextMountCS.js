@@ -1,4 +1,4 @@
-const nextMount = {
+const nextMountCS = {
     namespaced : true , 
     state: {
     },
@@ -10,4 +10,4 @@ const nextMount = {
     },
 }
 
-export default nextMount
+export default nextMountCS

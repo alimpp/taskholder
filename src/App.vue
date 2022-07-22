@@ -12,6 +12,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped >
+.app{background: #efeded; height: 100vh;}
 </style>

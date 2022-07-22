@@ -17,3 +17,6 @@
 .rtl{direction: rtl;}
 .ltr{direction: ltr;}
 .pointer{cursor: pointer;}
+
+.app-cart{width: 300px; padding: 10px 10px; border-radius: 4px; transition: 0.5s; color: #fafafa;} 
+.app-cart:hover{background: #fafafa; color: #303030;}

@@ -14,10 +14,10 @@
       </div>
       <div class="modal-body">
         <span class="app-text-size-y my-1">Title</span>
-        <input type="text" class="form-control my-1">
-        <span class="app-text-size-y my-1">Descrption</span>
-        <textarea name="" id="" cols="30" rows="10" class="form-control my-1"></textarea>
-        <button class="app-btn-blue my-1">Create</button>
+        <input type="text" class="form-control my-1" v-model="title">
+        <span class="app-text-size-y my-1">Description</span>
+        <textarea name="" id="" cols="30" rows="10" class="form-control my-1" v-model="description"></textarea>
+        <button class="app-btn-blue my-1" @click="createTask">Create</button>
       </div>
     </div>
   </div>
@@ -26,7 +26,19 @@
 
 <script>
 export default {
-
+    data(){
+      return{
+        title : '' , 
+        description : '' ,
+      }
+    } , 
+    methods : {
+      createTask(){
+         this.$store.dispatch('tasksCS/createTask' , {title : this.title , description : this.description })
+         this.title = '' 
+         this.description = ''
+      }
+    }
 }
 </script>
 
