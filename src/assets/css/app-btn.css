@@ -1,0 +1,24 @@
+.app-btn-dark{background: #353535; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
+.app-btn-dark:hover{background: none; border: 1px solid #353535; color: #353535}
+
+.app-btn-blue{background: #3330E4; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
+.app-btn-blue:hover{background: none; border: 1px solid #3330E4; color: #3330E4;}
+
+.app-btn-red{background: #F32424; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
+.app-btn-red:hover{background: none; border: 1px solid #F32424; color: #F32424;}
+
+.app-btn-gray{background: #909090; padding:50px 10px; border-radius: 4px; border: none; outline: none; transition: 0.5s; cursor: pointer;}
+.app-btn-gray:hover{background-color: none; border: 1px solid #909090; color: #909090;}
+
+.app-btn-yellow{background: #F9D923; padding: 5px 10px; border-radius: 6px; border: none; outline: none; transition: 0.5s; cursor: pointer;}
+.app-btn-yellow:hover{background: none; border: 1px solid #F9D923; color: #F9D923;}
+
+.app-btn-orange{background: orange; padding: 5px 10px; border-radius: 4px; border: none; outline: none; transition: 0.5s; cursor: pointer;}
+.app-btn-orange{background: none; border: 1px solid orange; color: orange;}
+
+.app-btn-light-dark{background: #243A73; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
+.app-btn-light-dark:hover{background: none; border: 1px solid #243A73; color: #243A73;}
+
+.app-btn-light-blue{background: #A5BECC; padding: 5px 10px; border-radius: 4px; border: none; outline: none; transition: 0.5s; cursor: pointer;}
+
+.app-btn-light{background: #fafafa; padding: 5px 10px; border-radius: 4px; border: none; outline: none; transition: 0.5s; cursor: pointer;}

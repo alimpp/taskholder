@@ -1,0 +1,19 @@
+/* all link css files */
+
+/* <link rel="stylesheet" href="./css/app.css">
+<link rel="stylesheet" href="./css/app-bg.css">
+<link rel="stylesheet" href="./css/app-color.css">
+<link rel="stylesheet" href="./css/app-flex.css">
+<link rel="stylesheet" href="./css/app-rgba-bg.css">
+<link rel="stylesheet" href="./css/app-text-size.css">
+<link rel="stylesheet" href="./css/app-btn-hover.css">
+<link rel="stylesheet" href="./css/app-btn.css">
+<link rel="stylesheet" href="./css/app-rgba-bg.css"> */
+
+/* all link css files */
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;font-family: sans-serif;}
+.rtl{direction: rtl;}
+.ltr{direction: ltr;}
+.pointer{cursor: pointer;}

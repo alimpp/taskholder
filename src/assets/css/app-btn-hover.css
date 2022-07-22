@@ -1,0 +1,14 @@
+.app-btn-dark-h{border:1px solid #353535; padding: 5px 10px; border-radius: 4px;cursor: pointer; outline: none; color: #353535;background: none;transition: 0.5s;}
+.app-btn-dark-h:hover{background: #353535; color: #fafafa;}
+.app-btn-blue-h{border: 1px solid #3330E4; padding: 5px 10px; border-radius: 4px;cursor: pointer; outline: none; color: #3330E4;background: none;transition: 0.5s;}
+.app-btn-blue-h:hover{background: #3330E4; color: #fafafa;}
+.app-btn-red-h{border:1px solid #F32424; padding: 5px 10px; border-radius: 4px;cursor: pointer; outline: none; color: #F32424;background: none;transition: 0.5s;}
+.app-btn-red-h{background: #F32424; color: #fafafa;}
+.app-btn-gray-h{border:1px solid #909090; padding:50px 10px; border-radius: 4px;cursor: pointer; outline: none;background: none;color: #909090;transition: 0.5s;}
+.app-btn-gray-h:hover{background: #909090; color: #fafafa;}
+.app-btn-yellow-h{border:1px solid #F9D923; padding: 5px 10px; border-radius: 4px;cursor: pointer; outline: none;background: none;color: #F9D923;transition: 0.5s;}
+.app-btn-yellow-h:hover{background: #F9D923; color: #303030;}
+.app-btn-orange-h{border:1px solid orange; padding: 5px 10px; border-radius: 4px;cursor: pointer; outline: none;background: none;color: orange;transition: 0.5s;}
+.app-btn-orange-h:hover{background-color: orange; color: #fdfdfd;}
+.app-btn-light-dark-h{border:1px solid #243A73; padding: 5px 10px; border-radius: 4px;cursor: pointer; outline: none; color: #243A73;background: none;transition: 0.5s;}
+.app-btn-light-dark-h:hover{background: #243A73; color: #fafafa;}
