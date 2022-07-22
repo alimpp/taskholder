@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <div class="col-lg-12 app-flex-row">
-        <span class="app-text-size-c app-blue-color px-2">All Tasks</span>
+  <div class="tasks container scrollbar">
+    <div class="col-lg-12 app-flex-row app-flex-justify-content-center">
+        <span class="app-text-size-c app-blue-color px-3">Task Cart</span>
         <createTask/>
           
-        <button type="button" class="app-btn-yellow mx-2" data-bs-toggle="modal" data-bs-target="#searchTask">
+        <button type="button" class="app-btn-yellow mx-1" data-bs-toggle="modal" data-bs-target="#searchTask">
         Search Task
         </button>
 
@@ -17,19 +17,34 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control my-1" placeholder="Type Title Task">
+                <input v-model="search" type="text" class="form-control my-1" placeholder="Type Title Task">
             </div>
             </div>
         </div>
         </div>
 
     </div>
+    <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <div class="app-cart app-blue-bg app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
+       <div class="app-cart opa-anim app-light-bg app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
           <span class="app-text-size-x my-1">Title</span>
-          <span class="app-text-size-z my-1">{{data.title}}</span>
+          <span class="app-text-size-y my-1">{{data.title}}</span>
           <span class="app-text-size-x my-1">Description</span>
-          <span class="app-text-size-z my-1">{{data.description}}</span>
+          <span class="app-text-size-y my-1">{{data.description}}</span>
+          <hr>
+          <div class="d-flex">
+            <button class="app-btn-red"><i class="bi bi-trash3"></i> Remove</button>
+            <div class="dropdown">
+              <button class="mx-2 app-btn-blue dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="bi bi-box-arrow-in-right"></i> Add To
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item">Emergency</a></li>
+                <li><a class="dropdown-item">Next Week</a></li>
+                <li><a class="dropdown-item">Next Mount</a></li>
+              </ul>
+            </div>
+          </div>
        </div>
     </div>
   </div>
@@ -38,15 +53,23 @@
 <script>
 import createTask from '../components/cerateTask.vue'
 export default {
+   data(){
+    return{
+      search : '' ,
+    }
+   } ,
    components : {createTask} , 
    computed : {
      dataSource(){
-      return this.$store.getters['tasksCS/getData']
+      const tasks = this.$store.getters['tasksCS/getData']
+      return tasks.filter(task => {
+        return task.title.match(this.search)
+      })
      }
    }
 }
 </script>
 
-<style>
-
+<style scoped >
+.tasks{height: 90vh; overflow: scroll;}
 </style>

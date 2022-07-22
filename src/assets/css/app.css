@@ -18,5 +18,13 @@
 .ltr{direction: ltr;}
 .pointer{cursor: pointer;}
 
-.app-cart{width: 300px; padding: 10px 10px; border-radius: 4px; transition: 0.5s; color: #fafafa;} 
-.app-cart:hover{background: #fafafa; color: #303030;}
+.app-cart{width: 300px; padding: 10px 10px; border-radius: 8px; transition: 0.5s; color: #303030;} 
+
+::-webkit-scrollbar{width: 3px;}
+::-webkit-scrollbar-thumb{background-color: #112B3C; border-radius: 50px;} 
+
+.opa-anim{ animation: 2s opa-anim ; }
+@keyframes opa-anim {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
