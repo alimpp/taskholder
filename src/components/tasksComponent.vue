@@ -1,8 +1,8 @@
 <template>
   <div class="tasks container scrollbar">
-    <div class="col-lg-12 app-flex-row app-flex-justify-content-center">
-        <span class="app-text-size-c app-blue-color px-3">Task Cart</span>
-        <createTask/>
+    <div class="col-lg-12 app-flex-row">
+       <img class="logo mx-2" src="https://i.graphicmama.com/uploads/2019/3/5c81d12ca5c93-Tasks%20Management%20Logo%20Design.jpg" alt="Error">
+       <createTask/>
           
         <button type="button" class="app-btn-yellow mx-1" data-bs-toggle="modal" data-bs-target="#searchTask">
         Search Task
@@ -26,7 +26,7 @@
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <div class="app-cart opa-anim app-light-bg app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
+       <div class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
           <span class="app-text-size-x my-1">Title</span>
           <span class="app-text-size-y my-1">{{data.title}}</span>
           <span class="app-text-size-x my-1">Description</span>
