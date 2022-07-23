@@ -5,7 +5,7 @@ function updateLocalStorage(nextWeek){
 const nextWeekCS = {
     namespaced : true , 
     state: {
-        nextWeek :  localStorage.getItem('nextWeek') ? JSON.parse(localStorage.getItem('nextWeek')) : [] 
+        nextWeek : localStorage.getItem('nextWeek') ? JSON.parse(localStorage.getItem('nextWeek')) : [] 
     },
     getters : {
         getData(state){

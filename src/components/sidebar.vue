@@ -14,7 +14,7 @@
             <button class="app-btn-light-dark my-1" @click="goToTasks">Tasks {{tasksCount}}</button>
             <button class="app-btn-red my-1" @click="goToEmergency">Emergency {{emergencyCount}}</button>
             <button class="app-btn-blue my-1" @click="goToNextWeek">Next Week {{nextWeekCount}}</button>
-            <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount</button>
+            <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount {{nextMountCount}}</button>
         </div>
     </div>
     </div>
@@ -46,6 +46,9 @@ export default {
         } , 
         nextWeekCount(){
             return this.$store.getters['nextWeekCS/nextWeekCount']
+        } , 
+        nextMountCount(){
+            return this.$store.getters['nextMountCS/nextMountCount']
         }
     }
 }

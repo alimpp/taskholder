@@ -1,5 +1,5 @@
 <template>
-  <div class="emergency container scrollbar">
+  <div class="nextweek container scrollbar">
     <div class="col-lg-12 app-flex-row">
        <img class="logo mx-2" src="https://i.graphicmama.com/uploads/2019/3/5c81d12ca5c93-Tasks%20Management%20Logo%20Design.jpg" alt="Error">
        <createTask/>
@@ -39,8 +39,8 @@
                <i class="bi bi-box-arrow-in-right"></i> Add To
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item">Emergency</a></li>
-                <li><a class="dropdown-item">Next Mount</a></li>
+                <li><a class="dropdown-item" @click="addToEmergency(data , data.id)">Emergency</a></li>
+                <li><a class="dropdown-item" @click="addToNextMount(data , data.id)">Next Mount</a></li>
               </ul>
             </div>
           </div>
@@ -84,11 +84,19 @@ export default {
                 timer: 2000
             })
     } , 
+    addToEmergency(data , id){
+      this.$store.dispatch('emergencyCS/addToEmergency' , data)
+      this.$store.dispatch('nextWeekCS/delete' , id)
+    } , 
+    addToNextMount(data , id){
+      this.$store.dispatch('nextMountCS/addToNextMount' , data)
+      this.$store.dispatch('nextWeekCS/delete' , id)
+    }
    }
 
 }
 </script>
 
 <style scoped >
-.emergency{height: 90vh; overflow: scroll;}
+.nextweek{height: 90vh; overflow: scroll;}
 </style>

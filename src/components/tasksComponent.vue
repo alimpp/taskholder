@@ -41,7 +41,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" @click="addToEmergency(data , data.id)">Emergency</a></li>
                 <li><a class="dropdown-item" @click="addToNextWeek(data, data.id)">Next Week</a></li>
-                <li><a class="dropdown-item">Next Mount</a></li>
+                <li><a class="dropdown-item" @click="addToNextMount(data , data.id)">Next Mount</a></li>
               </ul>
             </div>
           </div>
@@ -91,6 +91,10 @@ export default {
     } , 
     addToNextWeek(data, id){
        this.$store.dispatch('nextWeekCS/addToNextWeek' , data)
+       this.$store.dispatch('tasksCS/delete' , id)
+    } , 
+    addToNextMount(data , id){
+       this.$store.dispatch('nextMountCS/addToNextMount' , data)
        this.$store.dispatch('tasksCS/delete' , id)
     }
    }

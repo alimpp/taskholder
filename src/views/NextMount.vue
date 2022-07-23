@@ -1,10 +1,11 @@
 <template>
-  <h1>Next Mount</h1>
+  <nextMountComponent/>
 </template>
 
 <script>
+import nextMountComponent from '../components/nextMountComponent.vue'
 export default {
-
+   components : {nextMountComponent}
 }
 </script>
 
