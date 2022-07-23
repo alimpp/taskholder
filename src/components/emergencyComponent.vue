@@ -1,5 +1,5 @@
 <template>
-  <div class="tasks container scrollbar">
+  <div class="emergency container scrollbar">
     <div class="col-lg-12 app-flex-row">
        <img class="logo mx-2" src="https://i.graphicmama.com/uploads/2019/3/5c81d12ca5c93-Tasks%20Management%20Logo%20Design.jpg" alt="Error">
        <createTask/>
@@ -39,7 +39,6 @@
                <i class="bi bi-box-arrow-in-right"></i> Add To
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" @click="addToEmergency(data , data.id)">Emergency</a></li>
                 <li><a class="dropdown-item">Next Week</a></li>
                 <li><a class="dropdown-item">Next Mount</a></li>
               </ul>
@@ -64,7 +63,7 @@ export default {
 
    computed : {
      dataSource(){
-      const tasks = this.$store.getters['tasksCS/getData']
+      const tasks = this.$store.getters['emergencyCS/getData']
       return tasks.filter(task => {
         return task.title.match(this.search)
       })
@@ -73,17 +72,13 @@ export default {
 
    methods : {
     deleteTask(id){
-      return this.$store.dispatch('tasksCS/delete' , id)
+      return this.$store.dispatch('emergencyCS/delete' , id)
     } , 
-    addToEmergency(data , id){
-       this.$store.dispatch('emergencyCS/addToEmergency' , data)
-       this.$store.dispatch('tasksCS/delete' , id)
-    }
    }
 
 }
 </script>
 
 <style scoped >
-.tasks{height: 90vh; overflow: scroll;}
+.emergency{height: 90vh; overflow: scroll;}
 </style>
