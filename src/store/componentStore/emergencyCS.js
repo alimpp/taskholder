@@ -35,20 +35,11 @@ const emergencyCS = {
                 showConfirmButton: false,
                 timerProgressBar : true , 
                 toast : true , 
-                timer: 1000
+                timer: 2000
             })
         } , 
         delete({commit} , id){
             commit('deleteEmergencyTask' , id)
-            Swal.fire({
-                position: 'top',
-                icon: 'success',
-                title: 'Emergency Task Deleted',
-                showConfirmButton: false,
-                timerProgressBar : true , 
-                toast : true , 
-                timer: 1000
-            })
         }
     },
 }

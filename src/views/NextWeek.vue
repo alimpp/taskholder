@@ -1,10 +1,11 @@
 <template>
-  <h1>Next Week</h1>
+  <nextWeekComponent/>
 </template>
 
 <script>
+import nextWeekComponent from '../components/nextWeekComponent.vue'
 export default {
-
+    components : {nextWeekComponent}
 }
 </script>
 

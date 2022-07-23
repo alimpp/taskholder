@@ -39,7 +39,7 @@
                <i class="bi bi-box-arrow-in-right"></i> Add To
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item">Next Week</a></li>
+                <li><a class="dropdown-item" @click="addToNextWeek(data , data.id)">Next Week</a></li>
                 <li><a class="dropdown-item">Next Mount</a></li>
               </ul>
             </div>
@@ -51,6 +51,7 @@
 
 <script>
 import createTask from '../components/cerateTask.vue'
+import Swal from 'sweetalert2'
 export default {
 
    data(){
@@ -72,8 +73,21 @@ export default {
 
    methods : {
     deleteTask(id){
-      return this.$store.dispatch('emergencyCS/delete' , id)
+       this.$store.dispatch('emergencyCS/delete' , id)
+                Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: 'Emergency Task Deleted',
+                showConfirmButton: false,
+                timerProgressBar : true , 
+                toast : true , 
+                timer: 2000
+            })
     } , 
+    addToNextWeek(data, id){
+       this.$store.dispatch('nextWeekCS/addToNextWeek' , data)
+       this.$store.dispatch('emergencyCS/delete' , id)
+    }
    }
 
 }

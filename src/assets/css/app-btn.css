@@ -1,7 +1,7 @@
 .app-btn-dark{background: #353535; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
 .app-btn-dark:hover{background: none; border: 1px solid #353535; color: #353535}
 
-.app-btn-blue{background: #3330E4; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
+.app-btn-blue{background: #6361de; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}
 .app-btn-blue:hover{background: none; border: 1px solid #3330E4; color: #3330E4;}
 
 .app-btn-red{background: #ab2121; padding: 5px 10px; border-radius: 4px; border: none; outline: none; color: #fafafa; transition: 0.5s; cursor: pointer;}

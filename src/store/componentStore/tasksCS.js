@@ -35,20 +35,11 @@ const tasksCS = {
                 showConfirmButton: false,
                 timerProgressBar : true , 
                 toast : true , 
-                timer: 1000
+                timer: 2000
             })
         } ,
         delete({commit} , id){
             commit('deleteTask' , id)
-            Swal.fire({
-                position: 'top',
-                icon: 'success',
-                title: 'Task Deleted',
-                showConfirmButton: false,
-                timerProgressBar : true , 
-                toast : true , 
-                timer: 1000
-            })
         }
     },
 }
