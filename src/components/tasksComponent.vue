@@ -27,16 +27,16 @@
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
        <div class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
-          <span class="app-text-size-x py-1 px-2">Title</span>
+          <span class="app-text-size-x py-1 px-2">Task Name</span>
           <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
-          <span class="app-text-size-x py-1 px-2">Description</span>
+          <span class="app-text-size-x py-1 px-2">Task Description</span>
           <span class="app-text-size-y app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.description}}</span>
           <hr>
           <div class="d-flex">
             <button class="app-btn-red" @click="deleteTask(data.id)"><i class="bi bi-trash3"></i> Remove</button>
             <div class="dropdown">
               <button class="mx-2 app-btn-blue dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-               <i class="bi bi-box-arrow-in-right"></i> Add To
+               <i class="bi bi-box-arrow-in-right"></i> Add
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" @click="addToEmergency(data , data.id)">Emergency</a></li>

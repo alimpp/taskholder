@@ -1,5 +1,5 @@
 <template>
-  <div class="nextMount container scrollbar">
+  <div class="emergency container scrollbar">
     <div class="col-lg-12 app-flex-row">
        <img class="logo mx-2" src="https://i.graphicmama.com/uploads/2019/3/5c81d12ca5c93-Tasks%20Management%20Logo%20Design.jpg" alt="Error">
        <createTask/>
@@ -31,20 +31,6 @@
           <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
           <span class="app-text-size-x py-1 px-2">Task Description</span>
           <span class="app-text-size-y app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.description}}</span>
-          <hr>
-          <div class="d-flex">
-            <button class="app-btn-red" @click="deleteTask(data.id)"><i class="bi bi-trash3"></i> Remove</button>
-            <div class="dropdown">
-              <button class="mx-2 app-btn-blue dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-               <i class="bi bi-box-arrow-in-right"></i> Add
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" @click="addToEmergency(data , data.id)">Emergency</a></li>
-                <li><a class="dropdown-item" @click="addToNextWeek(data, data.id)">Next Week</a></li>
-              </ul>
-             <button class="app-btn-dark" @click="addToCompleted(data , data.id)"><i class="bi bi-hand-thumbs-up-fill"></i> Done</button>
-            </div>
-          </div>
        </div>
     </div>
   </div>
@@ -52,7 +38,6 @@
 
 <script>
 import createTask from '../components/cerateTask.vue'
-import Swal from 'sweetalert2'
 export default {
 
    data(){
@@ -65,43 +50,15 @@ export default {
 
    computed : {
      dataSource(){
-      const tasks = this.$store.getters['nextMountCS/getData']
+      const tasks = this.$store.getters['completedCS/getData']
       return tasks.filter(task => {
         return task.title.match(this.search)
       })
      }
    } , 
-
-   methods : {
-    deleteTask(id){
-       this.$store.dispatch('nextMountCS/delete' , id)
-        Swal.fire({
-            position: 'top',
-            icon: 'success',
-            title: 'Next Week Task Deleted',
-            showConfirmButton: false,
-            timerProgressBar : true , 
-            toast : true , 
-            timer: 2000
-        })
-    } , 
-    addToEmergency(data , id){
-       this.$store.dispatch('emergencyCS/addToEmergency' , data)
-       this.$store.dispatch('nextMountCS/delete' , id)
-    } , 
-    addToNextWeek(data, id){
-       this.$store.dispatch('nextWeekCS/addToNextWeek' , data)
-       this.$store.dispatch('nextMountCS/delete' , id)
-    } ,
-    addToCompleted(data , id){
-      this.$store.dispatch('completedCS/addToCompleted' , data)
-      this.$store.dispatch('nextMountCS/delete' , id)
-    }
-   }
-
 }
 </script>
 
 <style scoped >
-.nextMount{height: 90vh; overflow: scroll;}
+.emergency{height: 90vh; overflow: scroll;}
 </style>

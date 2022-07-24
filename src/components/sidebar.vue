@@ -15,6 +15,7 @@
             <button class="app-btn-red my-1" @click="goToEmergency">Emergency {{emergencyCount}}</button>
             <button class="app-btn-blue my-1" @click="goToNextWeek">Next Week {{nextWeekCount}}</button>
             <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount {{nextMountCount}}</button>
+            <button class="app-btn-dark my-1" @click="goToCompleted">Completed {{completedCount}}</button>
         </div>
     </div>
     </div>
@@ -36,6 +37,9 @@ export default {
         goToNextMount(){
             return this.$router.push('/nextMount')
         } ,
+        goToCompleted(){
+            return this.$router.push('/completed')
+        }
     } , 
     computed : {
         tasksCount(){
@@ -49,6 +53,9 @@ export default {
         } , 
         nextMountCount(){
             return this.$store.getters['nextMountCS/nextMountCount']
+        } ,
+        completedCount(){
+            return this.$store.getters['completedCS/completedCount']
         }
     }
 }
