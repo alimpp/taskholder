@@ -1,10 +1,10 @@
 <template>
   <div class="emergency container scrollbar">
     <div class="col-lg-12 app-flex-row">
-       <img class="logo mx-2" src="https://i.graphicmama.com/uploads/2019/3/5c81d12ca5c93-Tasks%20Management%20Logo%20Design.jpg" alt="Error">
+      
        <createTask/>
           
-       <i class="bi bi-search px-2 py-1" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
+       <i class="bi bi-search px-3 py-1" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
 
         <div class="modal fade" id="searchTask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -20,7 +20,7 @@
         </div>
         </div>
 
-        <div class="app-dark-bg my-1" style="border-radius:5px; height:38px;">
+        <div class="app-dark-bg my-1 mx-3" style="border-radius:5px; height:38px;">
           <h4 class="app-light-color px-3 py-1">{{time}}</h4>
         </div>
 
