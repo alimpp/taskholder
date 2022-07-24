@@ -82,7 +82,7 @@ export default {
           Swal.fire({
                 position: 'top',
                 icon: 'success',
-                title: 'Next Week Task Deleted',
+                title: 'Task Deleted',
                 showConfirmButton: false,
                 timerProgressBar : true , 
                 toast : true , 

@@ -27,7 +27,7 @@ const completedCS = {
             Swal.fire({
                 position: 'top',
                 icon: 'success',
-                title: 'Task Add To Completed',
+                title: 'Task Completed',
                 showConfirmButton: false,
                 timerProgressBar : true , 
                 toast : true , 
