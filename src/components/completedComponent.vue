@@ -4,10 +4,7 @@
        <img class="logo mx-2" src="https://i.graphicmama.com/uploads/2019/3/5c81d12ca5c93-Tasks%20Management%20Logo%20Design.jpg" alt="Error">
        <createTask/>
           
-        <button type="button" class="app-btn-yellow mx-1" data-bs-toggle="modal" data-bs-target="#searchTask">
-        Search Task
-        </button>
-
+       <i class="bi bi-search px-2 py-1" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
 
         <div class="modal fade" id="searchTask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -25,14 +22,20 @@
 
     </div>
     <hr>
-    <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <div class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
-          <span class="app-text-size-x py-1 px-2">Task Name</span>
-          <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
-          <span class="app-text-size-x py-1 px-2">Task Description</span>
-          <span class="app-text-size-y app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.description}}</span>
-       </div>
-    </div>
+   <table class="table opa-anim">
+  <thead>
+    <tr>
+      <th scope="col">Task Name</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody v-for="data in dataSource" :key="data.id">
+    <tr>
+      <td>{{data.title}}</td>
+      <td>Completed</td>
+    </tr>
+  </tbody>
+</table>
   </div>
 </template>
 
