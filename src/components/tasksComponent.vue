@@ -71,7 +71,7 @@ export default {
       })
      } , 
     time(){
-      return this.$store.getters['time/time']
+      return this.$store.getters['time/time'] 
      } ,
    } , 
 

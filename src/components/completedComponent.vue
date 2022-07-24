@@ -35,8 +35,8 @@
   </thead>
   <tbody v-for="data in dataSource" :key="data.id">
     <tr>
-      <td>{{data.title}}</td>
-      <td>Completed</td>
+      <td class="opa-anim">{{data.title}}</td>
+      <td class="opa-anim">Completed</td>
     </tr>
   </tbody>
 </table>
@@ -63,7 +63,7 @@ export default {
       })
      } , 
      time(){
-      return this.$store.getters['time/time']
+      return this.$store.getters['time/time'] 
      } ,
    } , 
 }
