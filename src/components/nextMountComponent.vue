@@ -20,6 +20,10 @@
         </div>
         </div>
 
+        <div class="app-dark-bg my-1" style="border-radius:5px; height:38px;">
+          <h4 class="app-light-color px-3 py-1">{{time}}</h4>
+        </div>
+
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
@@ -66,7 +70,10 @@ export default {
       return tasks.filter(task => {
         return task.title.match(this.search)
       })
-     }
+     } , 
+     time(){
+      return this.$store.getters['time/time']
+     } ,
    } , 
 
    methods : {
