@@ -27,7 +27,7 @@
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <div class="app-cart app-yellow-bg opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
+       <div style="box-shadow:2px 2px #F9D923;" class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
           <span class="app-text-size-x py-1 px-2">Task Name</span>
           <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
           <span class="app-text-size-x py-1 px-2">Task Description</span>

@@ -27,10 +27,10 @@
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <div class="app-cart app-blue-bg opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
-          <span class="app-text-size-x app-light-color py-1 px-2">Task Name</span>
+       <div style="box-shadow:2px 2px #615fe4;" class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
+          <span class="app-text-size-x app-dark-color py-1 px-2">Task Name</span>
           <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
-          <span class="app-text-size-x app-light-color py-1 px-2">Task Description</span>
+          <span class="app-text-size-x app-dark-color py-1 px-2">Task Description</span>
           <span class="app-text-size-y app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.description}}</span>
           <hr>
           <div class="d-flex">
