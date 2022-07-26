@@ -13,11 +13,11 @@
     </div>
     <div class="offcanvas-body">
         <div class="app-flex-column"> 
-            <button class="app-btn-light-dark my-1" @click="goToTasks">Tasks {{tasksCount}}</button>
-            <button class="app-btn-red my-1" @click="goToEmergency">Emergency {{emergencyCount}}</button>
-            <button class="app-btn-blue my-1" @click="goToNextWeek">Next Week {{nextWeekCount}}</button>
-            <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount {{nextMountCount}}</button>
-            <button class="app-btn-dark my-1" @click="goToCompleted">Completed {{completedCount}}</button>
+            <button class="app-btn-light-dark my-1" @click="goToTasks">Expected Tasks {{tasksCount}}</button>
+            <button class="app-btn-red my-1" @click="goToEmergency">Emergency Tasks {{emergencyCount}}</button>
+            <button class="app-btn-blue my-1" @click="goToNextWeek">Next Week Tasks {{nextWeekCount}}</button>
+            <button class="app-btn-yellow my-1" @click="goToNextMount">Next Mount Tasks {{nextMountCount}}</button>
+            <button class="app-btn-dark my-1" @click="goToCompleted">Completed Tasks {{completedCount}}</button>
         </div>
     </div>
     </div>

@@ -27,7 +27,7 @@
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <div style="box-shadow:2px 2px #ab2121;" class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" v-for="data in dataSource" :key="data.id">
+       <!-- <div style="box-shadow:2px 2px #ab2121;" class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" >
           <span class="app-text-size-x py-1 app-dark-color px-2">Task Name</span>
           <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
           <span class="app-text-size-x py-1 app-dark-color px-2">Task Description</span>
@@ -46,7 +46,25 @@
                  <button class="app-btn-dark" @click="addToCompleted(data , data.id)"><i class="bi bi-hand-thumbs-up-fill"></i> Done</button>
             </div>
           </div>
-       </div>
+       </div> -->
+       <div class="card mx-2 my-2 opa-anim" style="width: 18rem;" v-for="data in dataSource" :key="data.id">
+          <div class="card-body">
+            <h5 class="card-title">{{data.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Emergency Task</h6>
+            <p class="card-text">{{data.description}}</p>
+            <div class="d-flex">
+            <i class="bi bi-trash3 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
+            <div class="dropdown">
+               <i class="dropdown-toggle px-2" style="font-size:20px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item pointer" @click="addToNextWeek(data , data.id)">Next Week</a></li>
+                <li><a class="dropdown-item pointer" @click="addToNextMount(data , data.id)">Next Mount</a></li>
+              </ul>
+              <i class="bi bi-hand-thumbs-up-fill px-1 pointer" style="font-size:20px;" @click="addToCompleted(data , data.id)"></i>
+            </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </template>
