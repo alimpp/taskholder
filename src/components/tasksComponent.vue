@@ -13,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input v-model="search" type="text" class="form-control my-1" placeholder="Type Title Task">
+                <input v-model="search" type="text" class="form-control my-1" placeholder="Type Name Task">
             </div>
             </div>
         </div>
