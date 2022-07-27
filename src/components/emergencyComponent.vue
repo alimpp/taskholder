@@ -19,38 +19,15 @@
             </div>
         </div>
         </div>
-
-        <div class="app-dark-bg my-1 mx-3" style="border-radius:5px; height:38px;">
-          <h4 class="app-light-color px-3 py-1">{{time}}</h4>
-        </div>
-
+        <clock/>
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-       <!-- <div style="box-shadow:2px 2px #ab2121;" class="app-cart opa-anim app-flex-column mx-2 my-2 pointer" >
-          <span class="app-text-size-x py-1 app-dark-color px-2">Task Name</span>
-          <span class="app-text-size-y  app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.title}}</span>
-          <span class="app-text-size-x py-1 app-dark-color px-2">Task Description</span>
-          <span class="app-text-size-y app-light-blue-bg py-1 px-2" style="border-radius:5px;">{{data.description}}</span>
-          <hr>
-          <div class="d-flex">
-            <button class="app-btn-red" @click="deleteTask(data.id)"><i class="bi bi-trash3"></i> Remove</button>
-            <div class="dropdown">
-              <button class="mx-2 app-btn-blue dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-               <i class="bi bi-box-arrow-in-right"></i> Add
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" @click="addToNextWeek(data , data.id)">Next Week</a></li>
-                <li><a class="dropdown-item" @click="addToNextMount(data , data.id)">Next Mount</a></li>
-              </ul>
-                 <button class="app-btn-dark" @click="addToCompleted(data , data.id)"><i class="bi bi-hand-thumbs-up-fill"></i> Done</button>
-            </div>
-          </div>
-       </div> -->
        <div class="card mx-2 my-2 opa-anim" style="width: 18rem;" v-for="data in dataSource" :key="data.id">
           <div class="card-body">
             <h5 class="card-title">{{data.title}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Emergency Task</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{data.createTime}}</h6>
             <p class="card-text">{{data.description}}</p>
             <div class="d-flex">
             <i class="bi bi-trash3 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
@@ -72,6 +49,7 @@
 <script>
 import createTask from '../components/cerateTask.vue'
 import Swal from 'sweetalert2'
+import clock from './clock.vue'
 export default {
 
    data(){
@@ -80,7 +58,7 @@ export default {
     }
    } ,
 
-   components : {createTask} , 
+   components : {createTask , clock} , 
 
    computed : {
      dataSource(){
@@ -89,9 +67,6 @@ export default {
         return task.title.match(this.search)
       })
      } , 
-     time(){
-      return this.$store.getters['time/time']
-     } ,
    } , 
 
    methods : {
@@ -107,6 +82,7 @@ export default {
                 timer: 2000
             })
     } , 
+ 
     addToNextWeek(data, id){
        this.$store.dispatch('nextWeekCS/addToNextWeek' , data)
        this.$store.dispatch('emergencyCS/delete' , id)

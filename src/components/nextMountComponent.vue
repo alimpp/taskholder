@@ -19,11 +19,7 @@
             </div>
         </div>
         </div>
-
-        <div class="app-dark-bg my-1 mx-3" style="border-radius:5px; height:38px;">
-          <h4 class="app-light-color px-3 py-1">{{time}}</h4>
-        </div>
-
+        <clock/>
     </div>
     <hr>
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
@@ -32,6 +28,7 @@
         <div class="card-body">
           <h5 class="card-title">{{data.title}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">Next Mount Task</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{data.createTime}}</h6>
           <p class="card-text">{{data.description}}</p>
           <div class="d-flex">
             <i class="bi bi-trash3 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
@@ -54,6 +51,7 @@
 <script>
 import createTask from '../components/cerateTask.vue'
 import Swal from 'sweetalert2'
+import clock from './clock.vue'
 export default {
 
    data(){
@@ -62,7 +60,7 @@ export default {
     }
    } ,
 
-   components : {createTask} , 
+   components : {createTask , clock} , 
 
    computed : {
      dataSource(){

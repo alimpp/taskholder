@@ -1,23 +1,28 @@
 const time = {
     namespaced : true , 
     state : {
-        date : new Date()  
+        clock : ''
     } , 
     getters : {
-        time(state){
-            let hours = state.date.getHours();
-            let minutes = state.date.getMinutes();
-            let seconds = state.date.getSeconds();
-
-            hours = hours < 10 ? `0${hours}` : hours;
-            minutes = minutes < 10 ? `0${minutes}` : minutes;
-            seconds = seconds < 10 ? `0${seconds}` : seconds;
-
-            let time = `${hours} : ${minutes} : ${seconds}`
-
-            return time
-        } , 
+        showClock(state){
+            return state.clock
+        }
+     } , 
+    mutations : {
+        globalClock(state , data){
+            return state.clock = data
+        }
     } ,
+    actions : {
+        globalClock({commit} , data){
+            const date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            data = `${hours} : ${minutes} : ${seconds}`
+            commit('globalClock' , data)
+        },
+    }
 }
 
 export default time

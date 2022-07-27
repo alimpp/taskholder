@@ -29,6 +29,7 @@
 
 <script>
 import {uid} from '../uid'
+import {history} from '../history'
 export default {
     data(){
       return{
@@ -51,7 +52,7 @@ export default {
         else{
           this.titleError = false 
           this.descriptionError = false
-          this.$store.dispatch('tasksCS/createTask' , {id : uid() , title : this.title , description : this.description })
+          this.$store.dispatch('tasksCS/createTask' , {id : uid() , createTime : history() , title : this.title , description : this.description })
           this.title = '' 
           this.description = ''
         }

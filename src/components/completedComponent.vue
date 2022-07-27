@@ -18,11 +18,7 @@
             </div>
         </div>
         </div>
-
-        <div class="app-dark-bg my-1 mx-3" style="border-radius:5px; height:38px;">
-          <h4 class="app-light-color px-3 py-1">{{time}}</h4>
-        </div>
-
+        <clock/>
     </div>
     <hr>
    <table class="table opa-anim">
@@ -44,6 +40,7 @@
 
 <script>
 import createTask from '../components/cerateTask.vue'
+import clock from './clock.vue'
 export default {
 
    data(){
@@ -52,7 +49,7 @@ export default {
     }
    } ,
 
-   components : {createTask} , 
+   components : {createTask , clock} , 
 
    computed : {
      dataSource(){
