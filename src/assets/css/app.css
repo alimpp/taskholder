@@ -18,7 +18,8 @@
 .ltr{direction: ltr;}
 .pointer{cursor: pointer;}
 
-.app-cart{width: 310px; padding: 10px 10px; border-radius: 4px; transition: 0.5s;} 
+.app-cart{box-shadow: 0; transition: 0.5s;}
+.app-cart:hover{box-shadow: 3px 3px #909090;}
 
 ::-webkit-scrollbar{width: 3px;}
 ::-webkit-scrollbar-thumb{background-color: #112B3C; border-radius: 50px;} 

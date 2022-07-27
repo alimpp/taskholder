@@ -25,7 +25,7 @@
     <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
       
        <div class="card mx-2 my-2 opa-anim" style="width: 18rem;" v-for="data in dataSource" :key="data.id">
-        <div class="card-body">
+        <div class="card-body app-cart pointer">
           <h5 class="card-title">{{data.title}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">Next Mount Task</h6>
           <h6 class="card-subtitle mb-2 text-muted">{{data.createTime}}</h6>

@@ -25,12 +25,14 @@
   <thead>
     <tr>
       <th scope="col">Task Name</th>
+      <th scope="col">Create Time</th>
       <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody v-for="data in dataSource" :key="data.id">
     <tr>
       <td class="opa-anim">{{data.title}}</td>
+      <td class="opa-anim">{{data.createTime}}</td>
       <td class="opa-anim">Completed</td>
     </tr>
   </tbody>
