@@ -33,7 +33,7 @@
           <div class="d-flex">
             <i class="bi bi-trash3 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
             <div class="dropdown">
-              <i class="dropdown-toggle px-2" style="font-size:20px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
+              <i class="dropdown-toggle px-2" style="font-size:17px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item pointer" @click="addToEmergency(data , data.id)">Emergency</a></li>
                 <li><a class="dropdown-item pointer" @click="addToNextWeek(data, data.id)">Next Week</a></li>
