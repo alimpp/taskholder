@@ -1,6 +1,6 @@
 <template>
 <div>
-<i class="bi bi-pencil-fill app-btn-dark" style="font-size:25px;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+<i class="bi bi-pencil-fill app-btn-light" style="font-size:25px;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">

@@ -3,7 +3,7 @@
     <div class="col-lg-12 app-flex-row">
 
        <createTask/>
-        <i class="bi bi-search app-btn-dark mx-2" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
+        <i class="bi bi-search app-btn-light mx-2" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
        
         <div class="modal fade" id="searchTask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -31,7 +31,7 @@
            <div class="d-flex">
             <i class="bi bi-trash3 px-1 mt-1 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
             <div class="dropdown">
-              <i style="font-size:17px;" class="dropdown-toggle px-2 app-btn-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
+              <i style="font-size:17px;" class="dropdown-toggle px-2 app-btn-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item pointer" @click="addToEmergency(data , data.id)">Emergency</a></li>
                 <li><a class="dropdown-item pointer" @click="addToNextWeek(data, data.id)">Next Week</a></li>
