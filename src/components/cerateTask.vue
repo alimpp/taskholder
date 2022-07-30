@@ -1,9 +1,6 @@
 <template>
 <div>
-<i class="bi bi-pencil-fill px-2 py-1" style="font-size:25px;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-<!-- <button type="button" class="app-btn-light-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Create Task
-</button> -->
+<i class="bi bi-pencil-fill app-btn-dark" style="font-size:25px;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">

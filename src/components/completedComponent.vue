@@ -3,7 +3,7 @@
     <div class="col-lg-12 app-flex-row">
        <createTask/>
           
-       <i class="bi bi-search px-3 py-1" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
+       <i class="bi bi-search mx-2 app-btn-dark" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
 
         <div class="modal fade" id="searchTask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

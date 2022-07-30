@@ -4,7 +4,7 @@
 
        <createTask/>
           
-      <i class="bi bi-search px-3 py-1" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
+      <i class="bi bi-search mx-2 app-btn-dark" style="font-size:25px;" type="button"  data-bs-toggle="modal" data-bs-target="#searchTask"></i>
 
         <div class="modal fade" id="searchTask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -31,9 +31,9 @@
           <h6 class="card-subtitle mb-2 text-muted">{{data.createTime}}</h6>
           <p class="card-text">{{data.description}}</p>
           <div class="d-flex">
-            <i class="bi bi-trash3 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
+            <i class="bi bi-trash3 pointer mt-1" style="font-size:20px;" @click="deleteTask(data.id)"></i>
             <div class="dropdown">
-              <i class="dropdown-toggle px-2" style="font-size:17px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
+              <i class="dropdown-toggle app-btn-dark mx-1" style="font-size:17px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Add To</i> 
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item pointer" @click="addToEmergency(data , data.id)">Emergency</a></li>
                 <li><a class="dropdown-item pointer" @click="addToNextWeek(data, data.id)">Next Week</a></li>
