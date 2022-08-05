@@ -19,15 +19,47 @@
         </div>
         </div>
         <clock/>
+        <button class="app-btn-dark" @click="changeMode">
+          <span v-if="tableMode">Cart</span>
+          <span v-else>Table</span>
+        </button>
     </div>
     <hr>
-    <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;"> 
+
+     <table class="table opa-anim" v-if="tableMode">
+      <thead>
+        <tr>
+          <th scope="col">Task Name</th>
+          <th scope="col">Create Time</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody v-for="data in dataSource" :key="data.id">
+        <tr>
+          <td class="opa-anim">{{data.title}}</td>
+          <td class="opa-anim">{{data.createTime}}</td>
+          <td class="opa-anim">Expected</td>
+          <td class="opa-anim">
+            <div class="dropdown">
+              <i class="bi bi-three-dots-vertical px-2 app-btn-light mx-1"  style="font-size:17px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i> 
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item pointer" @click="addToEmergency(data , data.id)">Emergency</a></li>
+                <li><a class="dropdown-item pointer" @click="addToNextWeek(data, data.id)">Next Week</a></li>
+                <li><a class="dropdown-item pointer" @click="addToNextMount(data , data.id)">Next Mount</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;" v-else> 
        <div class="card mx-2 my-2 opa-anim" style="width: 18rem;" v-for="data in dataSource" :key="data.id">
         <div class="card-body app-cart pointer">
           <h5 class="card-title">{{data.title}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">Expected Tasks</h6>
           <h6 class="card-subtitle mb-2 text-muted">{{data.createTime}}</h6>
-          <p class="card-text">{{data.description}}</p>
            <div class="d-flex">
             <i class="bi bi-trash3 px-1 mt-1 pointer" style="font-size:20px;" @click="deleteTask(data.id)"></i>
             <div class="dropdown">
@@ -54,6 +86,7 @@ export default {
    data(){
     return{
       search : '' ,
+      tableMode : true 
     }
    } ,
 
@@ -92,6 +125,9 @@ export default {
     addToNextMount(data , id){
        this.$store.dispatch('nextMountCS/addToNextMount' , data)
        this.$store.dispatch('tasksCS/delete' , id)
+    } , 
+    changeMode(){
+       this.tableMode = !this.tableMode
     }
    }
 

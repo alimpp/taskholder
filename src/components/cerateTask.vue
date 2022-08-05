@@ -13,9 +13,6 @@
         <span class="app-text-size-y my-1">Task Name</span>
         <input type="text" class="form-control my-1" v-model="title">
         <span class="app-text-size-y app-red-color my-1" v-if="titleError">The Name cannot be empty...!</span>
-        <span class="app-text-size-y my-1">Task Description</span>
-        <textarea name="" id="" cols="30" rows="10" class="form-control my-1" v-model="description"></textarea>
-        <span class="app-text-size-y app-red-color my-1" v-if="descriptionError">The Description cannot be empty...!</span>
         <div><button class="app-btn-blue my-1" @click="createTask">Create</button></div>
       </div>
     </div>
@@ -32,26 +29,17 @@ export default {
       return{
         title : '' , 
         titleError : false , 
-        description : '' ,
-        descriptionError : false , 
       }
     } , 
     methods : {
       createTask(){
         if(this.title === ''){
            this.titleError = true 
-        }else{
-          this.titleError = false
-        }
-        if(this.description === ''){
-          this.descriptionError = true
         }  
         else{
           this.titleError = false 
-          this.descriptionError = false
-          this.$store.dispatch('tasksCS/createTask' , {id : uid() , createTime : history() , title : this.title , description : this.description })
+          this.$store.dispatch('tasksCS/createTask' , {id : uid() , createTime : history() , title : this.title })
           this.title = '' 
-          this.description = ''
         }
       }
     }
