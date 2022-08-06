@@ -41,12 +41,14 @@
           <td class="opa-anim">{{data.title}}</td>
           <td class="opa-anim">{{data.createTime}}</td>
           <td class="opa-anim">Emergency</td>
-          <td class="opa-anim">
+          <td class="opa-anim app-flex-row">
             <div class="dropdown">
               <i class="bi bi-three-dots-vertical px-2 app-btn-light mx-1"  style="font-size:17px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i> 
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item pointer" @click="addToNextWeek(data , data.id)">Next Week</a></li>
                 <li><a class="dropdown-item pointer" @click="addToNextMount(data , data.id)">Next Mount</a></li>
+                <li @click="deleteTask(data.id)"><a class="dropdown-item pointer"><i class="bi bi-trash3 pointer mt-1" style="font-size:20px;" @click="deleteTask(data.id)"></i>Delete</a></li>
+                <li @click="addToCompleted(data , data.id)"><a class="dropdown-item pointer"><i class="bi bi-hand-thumbs-up-fill pt-1 pointer" style="font-size:20px;"></i>Completed</a></li>
               </ul>
             </div>
           </td>
@@ -75,6 +77,7 @@
           </div>
       </div>
     </div>
+
   </div>
 </template>
 

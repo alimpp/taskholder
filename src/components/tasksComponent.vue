@@ -47,6 +47,7 @@
                 <li><a class="dropdown-item pointer" @click="addToEmergency(data , data.id)">Emergency</a></li>
                 <li><a class="dropdown-item pointer" @click="addToNextWeek(data, data.id)">Next Week</a></li>
                 <li><a class="dropdown-item pointer" @click="addToNextMount(data , data.id)">Next Mount</a></li>
+                 <li @click="deleteTask(data.id)"><a class="dropdown-item pointer"><i class="bi bi-trash3 pointer mt-1" style="font-size:20px;" @click="deleteTask(data.id)"></i>Delete</a></li>
               </ul>
             </div>
           </td>
@@ -74,6 +75,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 

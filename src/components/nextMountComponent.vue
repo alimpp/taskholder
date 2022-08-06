@@ -20,10 +20,43 @@
         </div>
         </div>
         <clock/>
+        <button class="app-btn-dark" @click="changeMode">
+          <span v-if="tableMode">Cart</span>
+          <span v-else>Table</span>
+        </button>
     </div>
     <hr>
-    <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;">
-      
+
+    <table class="table opa-anim" v-if="tableMode">
+      <thead>
+        <tr>
+          <th scope="col">Task Name</th>
+          <th scope="col">Create Time</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody v-for="data in dataSource" :key="data.id">
+        <tr>
+          <td class="opa-anim">{{data.title}}</td>
+          <td class="opa-anim">{{data.createTime}}</td>
+          <td class="opa-anim">Next Mount</td>
+          <td class="opa-anim">
+            <div class="dropdown">
+              <i class="bi bi-three-dots-vertical px-2 app-btn-light mx-1"  style="font-size:17px;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i> 
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item pointer" @click="addToEmergency(data , data.id)">Emergency</a></li>
+                <li><a class="dropdown-item pointer" @click="addToNextWeek(data, data.id)">Next Week</a></li>
+                <li @click="deleteTask(data.id)"><a class="dropdown-item pointer"><i class="bi bi-trash3 pointer mt-1" style="font-size:20px;" @click="deleteTask(data.id)"></i>Delete</a></li>
+                <li @click="addToCompleted(data , data.id)"><a class="dropdown-item pointer"><i class="bi bi-hand-thumbs-up-fill pt-1 pointer" style="font-size:20px;"></i>Completed</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="app-flex-wrap app-flex-justify-content-center" style="width:100%;" v-else>
        <div class="card mx-2 my-2 opa-anim" style="width: 18rem;" v-for="data in dataSource" :key="data.id">
         <div class="card-body app-cart pointer">
           <h5 class="card-title">{{data.title}}</h5>
@@ -43,8 +76,8 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </template>
 
@@ -57,6 +90,7 @@ export default {
    data(){
     return{
       search : '' ,
+      tableMode : true , 
     }
    } ,
 
@@ -98,6 +132,9 @@ export default {
     addToCompleted(data , id){
       this.$store.dispatch('completedCS/addToCompleted' , data)
       this.$store.dispatch('nextMountCS/delete' , id)
+    } , 
+    changeMode(){
+      this.tableMode = !this.tableMode
     }
    }
 
