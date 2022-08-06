@@ -1,6 +1,6 @@
 <template>
   <div class="my-1 mx-3" style="border-radius:5px; height:39px;">
-          <h4 class="app-dark-color px-3 mt-2">{{showClock}}</h4>
+          <h5 class="app-dark-color px-1 mt-2">{{showClock}}</h5>
   </div>
 </template>
 
